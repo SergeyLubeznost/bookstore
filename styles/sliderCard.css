@@ -1,0 +1,39 @@
+.sliderImage{
+    height: 43vh !important;
+    width: auto  !important;
+}
+
+.swiper-slide{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title__book{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+}
+
+.author__book{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    color: rgb(68, 115, 156);
+}
+
+.book__price{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 600;
+    text-align: center;
+border-bottom: 2px solid #a52a2a;
+color:rgb(82, 82, 82)
+}
+
+.order {
+    border: none;
+    background-color: #a52a2a;
+    width: 60%;
+    height: 6%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.7vh;
+    color: #ffffff;
+}

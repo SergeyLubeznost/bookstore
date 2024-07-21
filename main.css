@@ -1,0 +1,74 @@
+@import url(./styles/sliderCard.css);
+@import url(./loader.css);
+
+
+h1{
+    font-size: clamp(20px, 6vw, 50px);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 700;
+    text-align: center;
+border-bottom: 2px solid #a52a2a;
+margin-bottom: 30px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 70px;
+    
+}
+
+nav button{
+    border: none;
+    background-color: #a52a2a;
+    width: 10%;
+    height: 70%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(20px, 1.3vw, 50px);
+    color: #ffffff;
+}
+
+
+.modal__window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff3cd;
+    padding: 20px;
+    border: 1px solid #ccc;
+    z-index: 1;
+    height: 80%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    opacity: 0; /* начальная прозрачность */
+    transition: opacity 0.7s ease; /* добавляем транзицию для свойства opacity */
+}
+.modal__window.open {
+    opacity: 1; /* при добавлении класса "open" установить прозрачность на 1 */
+}
+.btn-bck{
+    background-color: #a52a2a !important;
+    color: #ffffff !important;
+}
+
+.none{
+    display: none!important;
+}
+
+.block{
+    display: block!important;
+}
+
+.modal__body{
+    height: 100%;
+    padding-top: 30px;
+}
+
+.btn {
+    margin-bottom: 20px !important;
+}
