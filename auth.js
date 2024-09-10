@@ -1,3 +1,7 @@
+
+ let admin;
+let userID;
+let userName;
 export default function authModal() {
 
 
@@ -24,14 +28,11 @@ export default function authModal() {
 modalWindow.appendChild(modalBody);
   // Добавляем модальное окно в тело документа
   document.body.appendChild(modalWindow);
-  let exit = document.querySelector('#exit')
+
   const submitButton = document.querySelector("#submit");
   submitButton.addEventListener('click', handleSubmitData);
   submitButton.addEventListener("click", () => {
-    
-    enter.classList.add('none');
-    exit.classList.remove('none');
-
+  
     modalWindow.classList.remove('open');
     // Удаление модального окна из DOM после завершения анимации
     modalWindow.addEventListener('transitionend', () => {
@@ -61,7 +62,7 @@ function handleSubmitData(event) {
   event.preventDefault();
   let password = document.querySelector("#exampleInputPassword1").value;
   let name = document.querySelector("#exampleInputEmail1").value;
-  const loader = document.querySelector('.loader');
+
 
 
 
@@ -77,21 +78,41 @@ function handleSubmitData(event) {
       method: 'POST',
       body: formData
   })
-  .then( loader.classList.add('block')
-)
   .then(response => response.json())
   .then(data => {
-      // Сохраняем данные в localStorage
-localStorage.setItem('userRole', data.role);
+    if (data.status === "Ok") { // Проверяем успешность авторизации
+      admin = data.role; // Устанавливаем роль пользователя
+      userID = data.id;
+      userName = data.name
+      // Сохраняем роль в localStorage
+      localStorage.setItem('userRole', admin);
+      localStorage.setItem('userID', userID);
+      localStorage.setItem('userName', userName);
+      console.log(data);
 
-// Получаем данные из localStorage и выводим их в консоль
-console.log(localStorage.getItem('userRole'));
+      let sectionAdmin = document.querySelector('#admin_section');
+      // Управляем видимостью административного раздела
+      if (admin === "админ") {
+          sectionAdmin.classList.remove('none');
+          sectionAdmin.classList.add('addbook__section');
+      } else {
+          sectionAdmin.classList.remove('addbook__section');
+          sectionAdmin.classList.add('none');
+      }
 
-  })
-  .then(loader.classList.add('none'),loader.classList.remove('block'))
+      // Обновляем видимость кнопок
+      enter.classList.add('none'); // скрываем кнопку "Войти"
+      exit.classList.remove('none'); // показываем кнопку "Выход"
+      location.reload(true);
+  } else {
+      // Если авторизация не удалась
+      alert("Неверные данные. Попробуйте снова.");
+      enter.classList.remove('none'); // показываем кнопку "Войти"
+      exit.classList.add('none'); // скрываем кнопку "Выход"
+  }
+})
   .catch(error => {
       console.error('Error response', error);
-      loader.classList.add('none'),loader.classList.remove('block')
   });
 }
 

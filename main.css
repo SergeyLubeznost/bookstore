@@ -1,6 +1,9 @@
 @import url(./styles/sliderCard.css);
-@import url(./loader.css);
 
+
+/* body {
+    overflow-y: hidden;
+} */
 
 h1{
     font-size: clamp(20px, 6vw, 50px);
@@ -71,4 +74,213 @@ nav button{
 
 .btn {
     margin-bottom: 20px !important;
+}
+
+.accordion{
+    width: 70%;
+    
+}
+
+.addbook__section{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.addBook{
+    background-color: cadetblue;
+    border:none;
+    color: #ffffff;
+
+    width: 100%;
+    height: 15%;
+}
+
+form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.addbook__section form div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.addbook__section form div input{
+    width: 100%!important;
+}
+
+.accordion-body {
+    padding: var(--bs-accordion-body-padding-y) var(--bs-accordion-body-padding-x);
+   
+}
+
+.delete{
+    width: 50%;
+    background-color: #2a80a5;
+    color: white;
+    border: none;
+}
+
+.block{
+    display: block;
+}
+
+.chagePrice{
+    width: 80%;
+    background-color: #2a80a5;
+    color: white;
+    border: none;
+}
+
+.chagePriceItem{
+    width: 80%;
+    background-color: #a52a2a;
+    color: white;
+    border: none;
+
+}
+.accordion-item{
+    width: 100%;
+}
+.accordion-body{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.changePriceInput{
+    width: 80%!important;
+    border:1px solid #2a80a5!important;
+    margin-top: 3%;
+    margin-bottom: 1%;
+}
+
+.infoBlock{
+    text-align: center;
+}
+
+.changeStatus h2{
+    text-align: center;
+}
+
+.clients__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid rgb(255, 255, 255);
+  }
+  
+  th,
+  td {
+    padding: 20px;
+  }
+
+thead th,
+tfoot th,
+tfoot td {
+  /* background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 225, 225, 0.5)); */
+  border: 3px solid rgb(255, 225, 225);
+  color:#ffffff;
+  text-align: center;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #9ab7ff;
+    text-align: center;
+    vertical-align: middle;
+
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #fdeaea;
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  tbody tr {
+    background-color: #d36969;
+  }
+  
+  table {
+    background-color: #a52a2a;
+  }
+
+  .changeStatusBtn{
+    background-color: #a52a2a;
+    width: 100%;
+    height: 2rem;
+    border:none;
+    color: #ffffff;
+
+  }
+
+  .changeStatusOrder{
+    background-color: #59a6cd;
+    width: 100%;
+    height: 2rem;
+    border:none;
+    color: #ffffff;
+  }
+
+ 
+
+  .bockRent{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .booksRentContainer{
+    display: flex;
+    justify-content: flex-start;
+ 
+    width: 80%;
+    margin-bottom: 30px;
+  }
+  .contBookList{
+min-width: 150px;
+height: 250px;
+border: #a52a2a 2px solid;
+margin-right: 30px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-direction: column;
+background-color: #e8e8e8;
+padding: 20px;
+  }
+
+  .contBookList div{
+    margin-bottom: 10px;
+  }
+  .read{
+background-color:#a52a2a;
+color: white;
+width: 100%!important;
+height: 40px;  
+border: none;
+}
+
+.buttonDisabled {
+    background-color: #ccc; 
+    color: #666; 
+    cursor: not-allowed; 
+    width: 100%;
+    height: 40px;  
+    border: none;   
 }

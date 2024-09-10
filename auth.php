@@ -43,7 +43,7 @@ if ($link === false) {
         if (password_verify($password, $user['password']) && $name == $user['name']) {
             $authenticated = true;
             header('Content-Type: application/json');
-            echo json_encode(["status" => "Ok", "role" => $user['role'], "name" => $name], JSON_UNESCAPED_UNICODE);
+            echo json_encode(["status" => "Ok", "role" => $user['role'], "name" => $name, "id" => $user['id']], JSON_UNESCAPED_UNICODE);
             break; // После аутентификации нужно выйти из цикла
         }
     }
